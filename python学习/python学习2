@@ -1,0 +1,103 @@
+# m =input('请输入您的总资产:')
+# m =int(m)
+# a=['电脑','鼠标','游艇','美女','手机','计算器','mp4']
+# b=[1999,10,20,998,1500,30,50]
+# for i,j in enumerate(a):
+#     print(i+1,j)
+# c=[]
+# while True:
+#     d =input('请输入购买的商品号:')
+#     try:
+#         d =int(d)
+#         print(a[d-1],b[d-1])
+#         c.append(b[d-1])
+#     except:
+#         if d == "确定":
+#             break
+#         elif d == "删除":
+#             e =input('请输入要删除的商品号:')
+#             e =int(e)
+#             c.remove(b[e-1])
+#             continue
+#         else:
+#             print('输入有误,请重新输入:')
+#             continue
+# f=0
+# for g in range(len(c)):
+#     f = f+int(c[g])
+# print('商品总价为:',f)
+# while True:
+#     if m >= f:
+#         h =m-f
+#         print('购买成功')
+#         print('剩余金额为:',h)
+#         break
+#     else:
+#         print('资产不足:',f-m)
+#         o=input('请充值金额:')
+#         o=int(o)
+#         m=m+o
+#         continue
+
+
+
+
+
+
+
+
+
+m =input('请输入您的总资产:')
+m =int(m)
+a=[['电脑',1999],['鼠标',10],['游艇',20],['美女',998],['手机',1500],['计算器',30],['mp4',50]]
+b=[1999,10,20,998,1500,30,50]
+for i,j in enumerate(a):
+    print(i+1,j)
+c=[]
+xx=[]
+while True:
+    d =input('请输入购买的商品号,确认购买请输入 确定 ，删除商品请输入 删除，取消购买请输入 退出')
+    try:
+        d =int(d)
+        print(a[d-1])
+        c.append(b[d-1])
+        xx.append(a[d-1])
+        print('购物车内商品列表:',xx)
+    except:
+        if d == "确定":
+            break
+        elif d == "退出":
+            c.clear()
+            xx.clear()
+            break
+        elif d == "删除":
+            e =input('请输入要删除的商品号:')
+            e =int(e)
+            c.remove(b[e-1])
+            xx.remove(a[e - 1])
+            print('购物车内商品列表:',xx)
+            continue
+        else:
+            print('输入有误,请重新输入:')
+            continue
+f=0
+for g in range(len(c)):
+    f = f+int(c[g])
+print('商品总价为:',f)
+while True:
+    if m >= f and f != 0:
+        h =m-f
+        print('购买成功')
+        print('剩余金额为:',h)
+        break
+    elif f == 0:
+        break
+    else:
+        print('资产不足:',f-m)
+        mm=input('请选择是否充值，需要输入 yes , 不需要输入 no')
+    if mm =='yes':
+                o=input('请充值金额:')
+                o=int(o)
+                m=m+o
+    else:
+        break

@@ -1,0 +1,14 @@
+---
+
+# 登录注册frame
+frame_id: login_frame
+
+# 账号登录
+login:
+  l_id: switcher_plogin   # 切换为账号登录
+  u_id: u  # 账号
+  p_id: p  # 密码
+  s_id: login_button  # 登录按钮
+
+
+
